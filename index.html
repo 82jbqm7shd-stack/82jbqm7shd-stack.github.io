@@ -88,16 +88,24 @@
 /* Desktop layout */
 @media (min-width: 768px) {
   .intro-layout {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: minmax(0, 1fr) 280px;
     align-items: start;
+    column-gap: 2rem;
   }
 
+  /* Force the text into the left column */
+  .intro-text {
+    grid-column: 1;
+  }
+
+  /* Force the photo into the right column */
   .profile-photo {
+    grid-column: 2;
     margin: 0;
     justify-self: end;
+    max-width: 280px;
   }
 }
-
 /* Mobile refinement */
 @media (max-width: 480px) {
   .profile-photo img {
