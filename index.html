@@ -56,7 +56,54 @@
     }
 
     footer { color: #666; font-size: 0.95rem; }
-  </style>
+    /* Intro layout with profile photograph */
+
+.intro-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.profile-photo {
+  max-width: 360px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: auto;
+  max-width: 260px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.profile-photo figcaption {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0.4rem;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .intro-layout {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+  }
+
+  .profile-photo {
+    margin: 0;
+    justify-self: end;
+  }
+}
+
+/* Mobile refinement */
+@media (max-width: 480px) {
+  .profile-photo img {
+    max-width: 220px;
+  }
+}  </style>
 
   <!-- Canonical entity model: define Person once here; subdomains should reference the same @id -->
   <script type="application/ld+json">
