@@ -55,7 +55,24 @@
       word-break: break-word;
     }
 
-    footer { color: #666; font-size: 0.95rem; }
+/* Standard site footer */
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ddd;
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+}
+
+.site-footer a {
+  color: #1a4b8c;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
     /* Intro layout with profile photograph */
 
 .intro-layout {
@@ -513,14 +530,20 @@
     </section>
   </main>
 
-  <footer>
-    <p>
-      © <span id="y"></span> markhopking.co.uk · Neutral biographical notes prepared with documentary citations and clear separation of public sources from private records.
-    </p>
-  </footer>
+<footer class="site-footer">
+  <p>
+    © <span id="copyright-year"></span>
+    <a href="https://markhopking.co.uk/">markhopking.co.uk</a>.
+    All rights reserved.
+  </p>
+  <p>
+    Content is presented in a neutral, third-party style with citations distinguishing
+    published sources from privately held records.
+  </p>
+</footer>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<script>
+  document.getElementById("copyright-year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
