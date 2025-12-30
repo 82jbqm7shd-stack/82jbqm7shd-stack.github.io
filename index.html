@@ -134,7 +134,7 @@
   float: right;
   width: 320px;
   max-width: 42vw;
-  margin: 0 0 1rem 1.5rem; /* top right bottom left */
+  margin: 0 0 1rem 1.5rem;
   border-radius: 0;
   background: #fafafa;
 }
@@ -145,7 +145,7 @@
   margin-bottom: 0.75rem;
 }
 
-/* Safe defaults for all images in infobox media */
+/* Safe defaults for images in infobox media */
 .infobox-media img{
   display: block;
   max-width: 100%;
@@ -157,19 +157,19 @@
   box-shadow: none;
 }
 
-/* Arms: smaller, no frame */
+/* Arms: deliberately small (smaller than tartan) */
 .infobox-arms{
-  width: 30%;
-  max-width: 120px;
+  width: 22%;
+  max-width: 90px;
   margin: 0 auto 0.5rem auto;
   border-radius: 0;
 }
 
-/* Arms caption: controls spacing before the portrait */
+/* Arms caption: controls spacing before portrait */
 .infobox-arms-caption{
   font-size: 0.85rem;
   margin-top: -0.25rem;
-  margin-bottom: 1rem; /* key gap: caption -> portrait */
+  margin-bottom: 1rem;
   text-align: center;
 }
 .infobox-arms-caption a{
@@ -177,7 +177,7 @@
   text-decoration: underline;
 }
 
-/* Portrait: framed like a photograph */
+/* Portrait: framed */
 .infobox-portrait{
   width: 70%;
   max-width: 500px;
@@ -196,30 +196,32 @@
   text-align: center;
 }
 
-/* Equal spacing after portrait caption so tartan sits like portrait sits under arms caption */
-.infobox-portrait-caption{
-  margin-bottom: 1rem; /* key gap: portrait caption -> tartan */
+/* Tartan block placed at bottom of infobox */
+.infobox-tartan-block{
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid #ddd;
+  text-align: center;
 }
 
-/* Tartan: sized similarly to arms, with a fine frame */
 .infobox-tartan{
-  width: 35%;
-  max-width: 140px;
-  margin: 0 auto 0.5rem auto;
+  width: 30%;
+  max-width: 120px;
+  margin: 0 auto 0.4rem auto;
   height: auto;
   border: 1px solid #000;
   background: #fff;
   border-radius: 0;
 }
 
-/* Ensure footer clears the float */
+/* Clear float */
 main::after{
   content: "";
   display: block;
   clear: both;
 }
 
-/* Mobile: stack infobox above text and use full width */
+/* Mobile */
 @media (max-width: 767px){
   .infobox-float{
     float: none;
@@ -228,58 +230,21 @@ main::after{
     margin: 1rem 0;
   }
 
-  .infobox-arms,
-  .infobox-tartan{
-    width: 55%;
-    max-width: 220px;
+  .infobox-arms{
+    width: 35%;
+    max-width: 140px;
   }
 
   .infobox-portrait{
     width: 70%;
     max-width: 420px;
   }
+
+  .infobox-tartan{
+    width: 40%;
+    max-width: 180px;
+  }
 }
-      .infobox-arms{
-        width: 55%;
-        max-width: 220px;
-      }
-      }
-
-    
-
-    .infobox-title{
-      font-weight: 700;
-      font-size: 1.05rem;
-      margin: 0 0 0.5rem 0;
-      text-align: center;
-    }
-
-    .infobox-arms-caption{
-      font-size: 0.85rem;
-      margin-top: -0.25rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .infobox-arms-caption a{
-      color: inherit;
-      text-decoration: underline;
-    }
-/* Space below the portrait caption to match the arms-caption-to-portrait gap */
-.infobox-portrait-caption{
-  margin-bottom: 1rem;
-}
-
-/* Tartan swatch: size similar to the arms */
-.infobox-tartan{
-  max-width: 140px;
-  width: 35%;
-  margin: 0rem auto 0.5rem auto;
-  height: auto;
-  border-radius: 0;
-  border: 1px solid #000;
-  background: #fff;
-}    
     .infobox-list{
   list-style: none;
   margin: 0;
