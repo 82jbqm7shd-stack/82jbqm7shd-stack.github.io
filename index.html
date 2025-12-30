@@ -224,7 +224,7 @@
     .infobox-arms-caption{
       font-size: 0.85rem;
       margin-top: -0.25rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
       text-align: center;
     }
 
@@ -232,6 +232,21 @@
       color: inherit;
       text-decoration: underline;
     }
+/* Space below the portrait caption to match the arms-caption-to-portrait gap */
+.infobox-portrait-caption{
+  margin-bottom: 1rem;
+}
+
+/* Tartan swatch: size similar to the arms */
+.infobox-tartan{
+  max-width: 140px;
+  width: 35%;
+  margin: 0rem auto 0.5rem auto;
+  height: auto;
+  border-radius: 0;
+  border: 1px solid #000;
+  background: #fff;
+}    
     .infobox-list{
   list-style: none;
   margin: 0;
@@ -349,7 +364,12 @@
 <img class="infobox-arms" src="Mark-Hopking-Arms.png" alt="Arms of Mark Hopking" loading="lazy" />
           <div class="infobox-arms-caption"><a href="https://heraldry.markhopking.co.uk" target="_blank" rel="noopener noreferrer">Arms of Mark Hopking</a></div>
 <img class="infobox-portrait" src="Hopking-20250322-001.jpg" alt="Mark Richard Hopking" loading="lazy" />
-          <div class="infobox-caption">Mark Hopking</div>
+<div class="infobox-caption infobox-portrait-caption">Mark Hopking</div>
+
+<img class="infobox-tartan" src="Hopking-Tartan.jpg" alt="Hopking personal tartan (registered)" loading="lazy" />
+<div class="infobox-caption">
+  <a href="https://heraldry.markhopking.co.uk/" target="_blank" rel="noopener noreferrer">Hopking tartan</a>
+</div>
         </div>
         <dl>
           <dt>Full name</dt><dd>Mark Richard Hopking</dd>
