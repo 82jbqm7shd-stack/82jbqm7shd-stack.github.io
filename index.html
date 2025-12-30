@@ -128,84 +128,117 @@
     max-width: 220px;
   }
 }
-    /* Wikipedia-style infobox (float right) */
-    .infobox-float{
-      border: 1px solid #000;
-      float: right;
-      width: 320px;
-      max-width: 42vw;
-      margin: 0 0 1rem 1.5rem; /* top right bottom left */
-      border-radius: 0;       /* closer to Wikipedia */
-    }
+/* --- Infobox (Wikipedia-style float) --- */
+.infobox-float{
+  border: 1px solid #000;
+  float: right;
+  width: 320px;
+  max-width: 42vw;
+  margin: 0 0 1rem 1.5rem; /* top right bottom left */
+  border-radius: 0;
+  background: #fafafa;
+}
 
-    .infobox-media{
-      text-align: center;
-      margin-bottom: 0.75rem;
-    }
+/* Media stack inside infobox */
+.infobox-media{
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
 
-    /* Infobox media: safe defaults */
-    .infobox-media img{
-      display: block;
-      max-width: 100%;
-      height: auto;
-      margin-left: auto;
-      margin-right: auto;
-      background: transparent;
-      border: none;
-    }
+/* Safe defaults for all images in infobox media */
+.infobox-media img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
 
-    /* Arms: preserve transparency and avoid framing */
-    imgimg.infobox-arms{
-      width: 35%;
-      max-width: 140px;
+/* Arms: smaller, no frame */
+.infobox-arms{
+  width: 35%;
+  max-width: 140px;
+  margin: 0 auto 0.5rem auto;
+  border-radius: 0;
+}
 
-      background: transparent !important;
-      border: none !important;
-      box-shadow: none;
-    }
+/* Arms caption: controls spacing before the portrait */
+.infobox-arms-caption{
+  font-size: 0.85rem;
+  margin-top: -0.25rem;
+  margin-bottom: 1rem; /* key gap: caption -> portrait */
+  text-align: center;
+}
+.infobox-arms-caption a{
+  color: inherit;
+  text-decoration: underline;
+}
 
-    /* Portrait: framed like a photograph */
- img.infobox-portrait{
+/* Portrait: framed like a photograph */
+.infobox-portrait{
   width: 70%;
-  margin: 2rem auto 0 auto;
+  max-width: 500px;
+  margin: 0 auto;
   height: auto;
   border: 1px solid #000;
   background: #fff;
+  border-radius: 0;
 }
 
-/* Keep arms smaller than the portrait */
-    .infobox-arms{
-      max-width: 140px;
-      width: 35%;
-      margin: 0rem auto 0.5rem auto;
-      border-radius: 0;
-    }
+/* Captions */
+.infobox-caption{
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0.4rem;
+  text-align: center;
+}
 
-    .infobox-portrait{
-      border-radius: 0;
-      margin: 0 auto;
-    }
+/* Equal spacing after portrait caption so tartan sits like portrait sits under arms caption */
+.infobox-portrait-caption{
+  margin-bottom: 1rem; /* key gap: portrait caption -> tartan */
+}
 
-    .infobox-caption{
-      font-size: 0.85rem;
-      color: #555;
-      margin-top: 0.4rem;
-    }
-/* Ensure footer clears the infobox float */
-    main::after{
-      content: "";
-      display: block;
-      clear: both;
-    }
+/* Tartan: sized similarly to arms, with a fine frame */
+.infobox-tartan{
+  width: 35%;
+  max-width: 140px;
+  margin: 0 auto 0.5rem auto;
+  height: auto;
+  border: 1px solid #000;
+  background: #fff;
+  border-radius: 0;
+}
 
-    /* Mobile: stack infobox above text and use full width */
-    @media (max-width: 767px){
-      .infobox-float{
-        float: none;
-        width: auto;
-        max-width: 100%;
-        margin: 1rem 0;
-      }
+/* Ensure footer clears the float */
+main::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Mobile: stack infobox above text and use full width */
+@media (max-width: 767px){
+  .infobox-float{
+    float: none;
+    width: auto;
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+
+  .infobox-arms,
+  .infobox-tartan{
+    width: 55%;
+    max-width: 220px;
+  }
+
+  .infobox-portrait{
+    width: 70%;
+    max-width: 420px;
+  }
+}
       .infobox-arms{
         width: 55%;
         max-width: 220px;
@@ -468,7 +501,6 @@
   </section>
 
   <!-- Personal life section removed, per your instruction -->
-</main>
 
     <section class="refs" id="references" aria-label="References">
       <h2>References</h2>
@@ -620,7 +652,6 @@
         Where URLs are not yet shown, they should be added once stable public links (or archival identifiers) are confirmed.
       </p>
     </section>
-  </main>
 
 <footer class="site-footer">
   <p>
