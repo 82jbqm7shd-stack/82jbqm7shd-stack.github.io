@@ -21,7 +21,12 @@
     body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 0; line-height: 1.55; }
     header, main, footer { max-width: 980px; margin: 0 auto; padding: 24px; }
     header { border-bottom: 1px solid #ddd; }
-    h1 { margin: 0 0 6px 0; font-size: 1.9rem; }
+    /* Clear the floated infobox inside the header */
+header::after{
+  content: "";
+  display: block;
+  clear: both;
+}    h1 { margin: 0 0 6px 0; font-size: 1.9rem; }
     .lede { margin: 10px 0 0 0; color: #222; }
     .meta { color: #555; margin: 10px 0 0 0; font-size: 0.95rem; }
     .meta a { white-space: nowrap; }
