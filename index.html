@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://markhopking.co.uk/" />
   <link rel="icon" type="image/png" href="https://markhopking.co.uk/hopking-favicon.png">
 
-  <!-- Basic social cards -->
+  <!-- Social cards -->
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Mark Hopking" />
   <meta property="og:description" content="British mariner and superyacht captain." />
@@ -17,267 +17,593 @@
   <meta property="og:image" content="https://markhopking.co.uk/Hopking-20250322-001.jpg" />
   <meta property="og:image:alt" content="Mark Hopking" />
 
+  <!-- Google Fonts: Elegant serif for headers, clean sans for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
+
   <style>
-    :root { color-scheme: light; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 0; line-height: 1.55; }
-    header, main, footer { max-width: 980px; margin: 0 auto; padding: 24px; }
-   header { border-bottom: 1px solid #ddd; }
-h1 { margin: 0 0 6px 0; font-size: 1.9rem; }
-    .lede { margin: 10px 0 0 0; color: #222; }
-    .meta { color: #555; margin: 10px 0 0 0; font-size: 0.95rem; }
-    .meta a { white-space: nowrap; }
-    section { padding: 18px 0; border-bottom: 1px solid #eee; }
-    h2 { margin: 0 0 10px 0; font-size: 1.28rem; }
-    h3 { margin: 14px 0 8px 0; font-size: 1.05rem; }
-    p { margin: 10px 0; }
-    .infobox { border: 1px solid #eee; padding: 14px; border-radius: 10px; background: #fafafa; }
-    .infobox dl { display: grid; grid-template-columns: 120px 1fr; gap: 8px 7px; margin: 0; }
-    .infobox dt { font-weight: 600; color: #222; }
-    .infobox dd { margin: 0; color: #222; }
-    sup { font-size: 0.75em; }
-    sup a { text-decoration: none; }
-    .note { color: #555; font-size: 0.95rem; }
-    .methodology-note {
-  font-size: 0.9rem;
-  color: #555;
-  margin: 0.75rem 0 1.25rem 0;
-}
-    /* References layout fixes */
-    .refs { overflow-x: hidden; }
-    .refs ol {
+    :root {
+      /* Maritime & Traditional Color Palette */
+      --navy: #1a4b8c;
+      --navy-dark: #14396b;
+      --burgundy: #8b2635;
+      --gold: #d4a574;
+      --gold-light: #e6c9a0;
+      --charcoal: #4a4a4a;
+      --warm-gray: #6b6b6b;
+      --cream: #f5f2ed;
+      --white: #ffffff;
+      --border-light: #e5e3de;
+      
+      /* Typography */
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Source Serif 4', Georgia, serif;
+      --font-ui: system-ui, -apple-system, sans-serif;
+      
+      color-scheme: light;
+    }
+
+    * {
       margin: 0;
-      padding-left: 2.25rem;            /* ensures double-digit numerals are visible */
-      list-style-position: outside;
-    }
-    .refs li {
-      margin: 0.6rem 0;
-      overflow-wrap: anywhere;          /* prevents long URLs from pushing layout */
-      word-break: break-word;
-    }
-/* Force references to start below the infobox float */
-.refs{
-  clear: both;
-}/* Standard site footer */
-.site-footer {
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #ddd;
-  font-size: 0.85rem;
-  color: #555;
-  text-align: center;
-}
-
-.site-footer a {
-  color: #1a4b8c;
-  text-decoration: none;
-}
-
-.site-footer a:hover {
-  text-decoration: underline;
-}
-    /* Intro layout with profile photograph */
-
-.intro-layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.profile-photo {
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.profile-photo img {
-  width: 100%;
-  height: auto;
-  max-width: 500px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-}
-
-.profile-photo figcaption {
-  font-size: 0.85rem;
-  color: #555;
-  margin-top: 0.4rem;
-}
-
-/* Desktop layout */
-@media (min-width: 768px) {
-  .intro-layout {
-    grid-template-columns: minmax(0, 1fr) 500px;
-    align-items: start;
-    column-gap: 2rem;
-  }
-
-  /* Force the text into the left column */
-  .intro-text {
-    grid-column: 1;
-  }
-
-  /* Force the photo into the right column */
-  .profile-photo {
-    grid-column: 2;
-    margin: 0;
-    justify-self: end;
-    max-width: 500px;
-  }
-}
-/* Mobile refinement */
-@media (max-width: 480px) {
-  .profile-photo img {
-    max-width: 220px;
-  }
-}
-/* --- Infobox (Wikipedia-style float) --- */
-.infobox-float{
-  border: 1px solid #000;
-  float: right;
-  width: 320px;
-  max-width: 42vw;
-  margin: 0 0 1rem 1.5rem;
-  border-radius: 0;
-  background: #fafafa;
-}
-
-/* Media stack inside infobox */
-.infobox-media{
-  text-align: center;
-  margin-bottom: 0.75rem;
-}
-
-/* Safe defaults for images in infobox media */
-.infobox-media img{
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-}
-
-/* Arms: deliberately small (smaller than tartan) */
-.infobox-arms{
-  width: 30%;
-  max-width: 120px;
-  margin: 0 auto 0.5rem auto;
-  border-radius: 0;
-}
-
-/* Arms caption: controls spacing before portrait */
-.infobox-arms-caption{
-  font-size: 0.85rem;
-  margin-top: 0.4rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;        /* keeps separator offset */
-  border-bottom: 1px solid #ddd;
-  text-align: center;
-}
-.infobox-arms-caption a{
-  color: inherit;
-  text-decoration: underline;
-}
-
-/* Portrait: framed */
-.infobox-portrait{
-  width: 70%;
-  max-width: 500px;
-  margin: 0 auto;
-  height: auto;
-  border: 1px solid #000;
-  background: #fff;
-  border-radius: 0;
-}
-
-/* Captions */
-.infobox-caption{
-  font-size: 0.85rem;
-  color: #555;
-  margin-top: 0.4rem;     /* space from image to caption */
-  margin-bottom: 1rem;   /* space from caption to next element */
-  text-align: center;
-}
-
-/* Tartan block placed at bottom of infobox */
-.infobox-tartan-block{
-  margin-top: 0.9rem;
-  padding-top: 0.9rem;
-  border-top: 1px solid #ddd;
-  text-align: center;
-}
-
-.infobox-tartan{
-  width: 30%;
-  max-width: 120px;
-  margin: 0 auto 0.4rem auto;
-  height: auto;
-  border: 1px solid #000;
-  background: #fff;
-  border-radius: 0;
-}
-
-/* Clear float */
-main::after{
-  content: "";
-  display: block;
-  clear: both;
-}
-
-/* Mobile */
-@media (max-width: 767px){
-  .infobox-float{
-    float: none;
-    width: auto;
-    max-width: 100%;
-    margin: 1rem 0;
-  }
-
-  .infobox-arms{
-    width: 40%;
-    max-width: 180px;
-  }
-
-  .infobox-portrait{
-    width: 70%;
-    max-width: 420px;
-  }
-
-  .infobox-tartan{
-    width: 40%;
-    max-width: 180px;
-  }
-}
-    .infobox-list{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.infobox-list li{
-  margin: 0;
-}
-    /* Fully justified body text (encyclopaedic style) */
-    .lede,
-    main p {
-      text-align: justify;
-      hyphens: auto;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    /* Mobile refinement: revert to left-aligned for readability */
-    @media (max-width: 600px) {
-      .lede,
-      main p {
-        text-align: left;
-        hyphens: none;
+    body {
+      font-family: var(--font-body);
+      line-height: 1.6;
+      color: var(--charcoal);
+      background: var(--cream);
+    }
+
+    /* ==================== NAVIGATION ==================== */
+    
+    .site-nav {
+      background: var(--navy);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 70px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      color: var(--white);
+      transition: opacity 0.2s;
+    }
+
+    .nav-brand:hover {
+      opacity: 0.9;
+    }
+
+    .nav-arms {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      filter: brightness(1.1);
+    }
+
+    .nav-brand-text h1 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .nav-brand-text .subtitle {
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      opacity: 0.85;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-family: var(--font-ui);
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Mobile menu toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--navy-dark);
+        flex-direction: column;
+        padding: 24px;
+        gap: 16px;
+        display: none;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a::after {
+        display: none;
       }
     }
 
-</style>
+    /* ==================== HERO SECTION ==================== */
+    
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: var(--white);
+      padding: 48px 24px;
+      position: relative;
+      overflow: hidden;
+    }
 
-  <!-- Canonical entity model: define Person once here; subdomains should reference the same @id -->
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(139, 38, 53, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-content h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 24px;
+      opacity: 0.95;
+      font-weight: 500;
+    }
+
+    .hero-description {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      opacity: 0.9;
+      max-width: 600px;
+    }
+
+    .hero-image {
+      text-align: center;
+    }
+
+    .hero-portrait {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 12px;
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-portrait:hover {
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 968px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+      }
+
+      .hero-content h2 {
+        font-size: 2rem;
+      }
+
+      .hero-description {
+        margin: 0 auto;
+      }
+    }
+
+    /* ==================== MAIN CONTENT ==================== */
+    
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .section-header p {
+      color: var(--warm-gray);
+      font-size: 1.1rem;
+    }
+
+    /* ==================== SUBDOMAIN CARDS ==================== */
+    
+    .subdomain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-bottom: 64px;
+    }
+
+    .subdomain-card {
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 32px;
+      text-decoration: none;
+      color: var(--charcoal);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subdomain-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 0;
+      background: var(--gold);
+      transition: height 0.3s ease;
+    }
+
+    .subdomain-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      border-color: var(--gold);
+    }
+
+    .subdomain-card:hover::before {
+      height: 100%;
+    }
+
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .subdomain-card:hover .card-icon {
+      transform: scale(1.1);
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .card-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--warm-gray);
+      margin-bottom: 16px;
+    }
+
+    .card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-ui);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      transition: gap 0.3s ease;
+    }
+
+    .subdomain-card:hover .card-cta {
+      gap: 12px;
+      color: var(--burgundy);
+    }
+
+    /* ==================== INFO BOX ==================== */
+    
+    .info-section {
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 48px;
+      margin-bottom: 64px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .info-media {
+      text-align: center;
+    }
+
+    .info-arms {
+      width: 120px;
+      margin: 0 auto 16px;
+      display: block;
+    }
+
+    .info-tartan {
+      width: 120px;
+      margin: 24px auto 8px;
+      display: block;
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+    }
+
+    .info-caption {
+      font-size: 0.85rem;
+      color: var(--warm-gray);
+    }
+
+    .info-caption a {
+      color: var(--navy);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .info-caption a:hover {
+      border-bottom-color: var(--navy);
+    }
+
+    .info-details {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 16px 24px;
+      font-size: 0.95rem;
+    }
+
+    .info-details dt {
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .info-details dd {
+      color: var(--charcoal);
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info-list li {
+      padding: 4px 0;
+    }
+
+    .info-list li::before {
+      content: '•';
+      color: var(--gold);
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    @media (max-width: 968px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .info-section {
+        padding: 32px 24px;
+      }
+    }
+
+    /* ==================== FOOTER ==================== */
+    
+    footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 48px 24px 24px;
+      margin-top: 64px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .footer-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .footer-bottom p {
+      margin: 8px 0;
+    }
+
+    /* ==================== UTILITIES ==================== */
+    
+    .sup-ref {
+      font-size: 0.75em;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .sup-ref a {
+      text-decoration: none;
+      color: var(--navy);
+      transition: color 0.2s;
+    }
+
+    .sup-ref a:hover {
+      color: var(--burgundy);
+    }
+
+    /* ==================== ANIMATIONS ==================== */
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .subdomain-card {
+      animation: fadeInUp 0.6s ease backwards;
+    }
+
+    .subdomain-card:nth-child(1) { animation-delay: 0.1s; }
+    .subdomain-card:nth-child(2) { animation-delay: 0.2s; }
+    .subdomain-card:nth-child(3) { animation-delay: 0.3s; }
+    .subdomain-card:nth-child(4) { animation-delay: 0.4s; }
+
+    /* ==================== PRINT STYLES ==================== */
+    
+    @media print {
+      .site-nav,
+      .nav-toggle,
+      .hero,
+      footer {
+        display: none;
+      }
+
+      body {
+        background: white;
+        color: black;
+      }
+
+      .subdomain-card {
+        break-inside: avoid;
+        border: 1px solid #000;
+      }
+    }
+  </style>
+
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -299,347 +625,303 @@ main::after{
         "about": { "@id": "https://markhopking.co.uk/" },
         "inLanguage": "en-GB"
       },
- {
-  "@type": "Person",
-  "@id": "https://markhopking.co.uk/",
-  "name": "Mark Richard Hopking",
-  "givenName": "Mark Richard",
-  "familyName": "Hopking",
-  "alternateName": [
-    "Mark Hopking"
-  ],
-    "url": "https://markhopking.co.uk/",
-"image": "https://markhopking.co.uk/Hopking-20250322-001.jpg",
-    "disambiguatingDescription": "British mariner and superyacht captain. Surname: Hopking (not Hopkin/Hopkins).",
-  "birthDate": "1971-04-28",
-  "birthPlace": {
-    "@type": "Place",
-    "name": "Colchester, England"
-  },
-  "nationality": "United Kingdom",
-  "homeLocation": {
-    "@type": "Place",
-    "name": "Edinburgh, Scotland"
-  },
-  "description": "British mariner and superyacht captain whose career spans expedition sailing, polar operations, and senior command and project leadership.",
-  "jobTitle": [
-    "Mariner",
-    "Superyacht captain",
-    "Project manager"
-  ],
-  "knowsAbout": [
-    "Maritime operations",
-    "Superyachts",
-    "Expedition sailing",
-    "Polar operations",
-    "Governance and compliance",
-    "Document control",
-    "Heraldry",
-    "Genealogy"
-  ],
- "subjectOf": [
-  {
-    "@type": "WebPage",
-    "@id": "https://marine.markhopking.co.uk/#webpage",
-    "url": "https://marine.markhopking.co.uk/",
-    "name": "Maritime career"
-  },
-  {
-    "@type": "WebPage",
-    "@id": "https://barony.markhopking.co.uk/#webpage",
-    "url": "https://barony.markhopking.co.uk/",
-    "name": "Barony of Balvill"
-  },
-  {
-    "@type": "WebPage",
-    "@id": "https://heraldry.markhopking.co.uk/#webpage",
-    "url": "https://heraldry.markhopking.co.uk/",
-    "name": "Heraldry"
-  },
-  {
-    "@type": "WebPage",
-    "@id": "https://genealogy.markhopking.co.uk/#webpage",
-    "url": "https://genealogy.markhopking.co.uk/",
-    "name": "Genealogy"
-  }
-],
-  "sameAs": [
-    "https://www.linkedin.com/in/markhopking/",
-    "https://www.facebook.com/markhopking",
-    "https://www.instagram.com/markhopking/",
-    "https://x.com/markhopking",
-    "https://roll.baronage.com/baron/mark-hopking"
-    ],
-  "mainEntityOfPage": { "@id": "https://markhopking.co.uk/#webpage" }
-}
+      {
+        "@type": "Person",
+        "@id": "https://markhopking.co.uk/",
+        "name": "Mark Richard Hopking",
+        "givenName": "Mark Richard",
+        "familyName": "Hopking",
+        "alternateName": ["Mark Hopking"],
+        "url": "https://markhopking.co.uk/",
+        "image": "https://markhopking.co.uk/Hopking-20250322-001.jpg",
+        "disambiguatingDescription": "British mariner and superyacht captain. Surname: Hopking (not Hopkin/Hopkins).",
+        "birthDate": "1971-04-28",
+        "birthPlace": {
+          "@type": "Place",
+          "name": "Colchester, England"
+        },
+        "nationality": "United Kingdom",
+        "homeLocation": {
+          "@type": "Place",
+          "name": "Edinburgh, Scotland"
+        },
+        "description": "British mariner and superyacht captain whose career spans expedition sailing, polar operations, and senior command and project leadership.",
+        "jobTitle": [
+          "Mariner",
+          "Superyacht captain",
+          "Project manager"
+        ],
+        "knowsAbout": [
+          "Maritime operations",
+          "Superyachts",
+          "Expedition sailing",
+          "Polar operations",
+          "Governance and compliance",
+          "Document control",
+          "Heraldry",
+          "Genealogy"
+        ],
+        "subjectOf": [
+          {
+            "@type": "WebPage",
+            "@id": "https://marine.markhopking.co.uk/#webpage",
+            "url": "https://marine.markhopking.co.uk/",
+            "name": "Maritime career"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://barony.markhopking.co.uk/#webpage",
+            "url": "https://barony.markhopking.co.uk/",
+            "name": "Barony of Balvill"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://heraldry.markhopking.co.uk/#webpage",
+            "url": "https://heraldry.markhopking.co.uk/",
+            "name": "Heraldry"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://genealogy.markhopking.co.uk/#webpage",
+            "url": "https://genealogy.markhopking.co.uk/",
+            "name": "Genealogy"
+          }
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/markhopking/",
+          "https://www.facebook.com/markhopking",
+          "https://www.instagram.com/markhopking/",
+          "https://x.com/markhopking",
+          "https://roll.baronage.com/baron/mark-hopking"
+        ],
+        "mainEntityOfPage": { "@id": "https://markhopking.co.uk/#webpage" }
+      }
     ]
   }
   </script>
 </head>
 
 <body>
-<header>
-  <h1>Mark Hopking</h1>
-
-  <div class="infobox infobox-float">
-        <div class="infobox-media" aria-label="Images">
-<img class="infobox-arms" src="Mark-Hopking-Arms.png" alt="Arms of Mark Hopking" loading="lazy" />
-          <div class="infobox-arms-caption"><a href="https://heraldry.markhopking.co.uk" target="_blank" rel="noopener noreferrer">Arms of Mark Hopking</a></div>
-<img class="infobox-portrait" src="Hopking-20250322-001.jpg" alt="Mark Richard Hopking" loading="lazy" />
-<div class="infobox-caption infobox-portrait-caption">Mark Hopking</div>
+  <!-- Navigation -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="https://markhopking.co.uk/" class="nav-brand">
+        <img src="Mark-Hopking-Arms.png" alt="Arms of Mark Hopking" class="nav-arms" />
+        <div class="nav-brand-text">
+          <h1>Mark Hopking</h1>
+          <span class="subtitle">MARINER • BARON • ARMIGER</span>
         </div>
-        <dl>
-          <dt>Full name</dt><dd>Mark Richard Hopking</dd>
-          <dt>Born</dt><dd>28 April 1971<sup><a href="#ref-1">[1]</a></sup></dd>
-          <dt>Place of birth</dt><dd>Colchester, England</dd>
-          <dt>Nationality</dt><dd>British</dd>
-          <dt>Residence</dt><dd>Edinburgh, Scotland</dd>
-          <dt>Dignity</dt><dd>Baron of Balvill</dd>          
-          <dt>Known for</dt>
-         <dd>
-  <ul class="infobox-list">
-    <li>Superyacht command;</li>
-    <li>Build oversight;</li>
-    <li>Project leadership and strategic governance<sup><a href="#ref-3">[3]</a></sup></li>
-  </ul>
-</dd>
-<dt>Affiliations</dt>
-<dd>
-  <ul class="infobox-list">
-    <li>Freeman of the Honourable Company of Master Mariners;</li>
-    <li>Fellow of the Society of Antiquaries of Scotland<sup><a href="#ref-5">[5]</a></sup></li>
-  </ul>
-</dd>
-       </dl>
-
-<div class="infobox-tartan-block" aria-label="Tartan">
-  <img class="infobox-tartan" src="Hopking-Tartan.jpg" alt="Hopking personal tartan (registered)" loading="lazy" />
-<div class="infobox-caption">
-  <a href="https://www.tartanregister.gov.uk/tartanDetails?ref=12619"
-     target="_blank"
-     rel="noopener noreferrer">
-    Hopking tartan
-  </a>
-</div>
-</div>
-
-</div>
-
- <p class="lede">
- Mark Hopking is a British mariner whose professional life has encompassed senior command, and project leadership within the superyacht sector. He is the Baron of Balvill, and studies heraldry and genealogy, with particular interest in their historical and legal contexts.
-</p>
-
-      <p class="meta">
-        Subdomains:
-        <a href="https://marine.markhopking.co.uk/">Maritime career</a> ·
-        <a href="https://barony.markhopking.co.uk/">Barony of Balvill</a> ·
-        <a href="https://heraldry.markhopking.co.uk/">Heraldry</a> ·
+      </a>
+      
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">
+        ☰
+      </button>
+      
+      <div class="nav-links" id="navLinks">
+        <a href="https://marine.markhopking.co.uk/">Maritime</a>
+        <a href="https://barony.markhopking.co.uk/">Barony</a>
+        <a href="https://heraldry.markhopking.co.uk/">Heraldry</a>
         <a href="https://genealogy.markhopking.co.uk/">Genealogy</a>
-      </p>
-</header>
+      </div>
+    </div>
+  </nav>
 
- <main>
-  <section id="barony">
-    <h2>Barony of Balvill</h2>
-    <p>
-      Hopking is the Baron of Balvill, a dignity created by Crown charter in 1630. Following the Abolition of Feudal Tenure etc. (Scotland) Act 2000, the dignity of barony was formally severed from land ownership. It remains recognized in Scots law as a personal dignity, legally classified as incorporeal heritable property.     </p>
-    <p class="note">
-      <a href="https://barony.markhopking.co.uk/">Barony of Balvill →</a>
-    </p>
-  </section>   
-  <section id="maritime-career">
-    <h2>Maritime career</h2>
-    <p>
-      Hopking’s maritime career spans thirty years of expedition sailing, environmental & polar operations, and senior command within the superyacht sector. Later he has worked in project and programme leadership roles. Three new build projects have been delivered with benefit of Hopking's oversight. His strategic management has drawn him towards complex programs which require strong direction.
-    </p>
-    <p class="note">
-      <a href="https://marine.markhopking.co.uk/">Full maritime career →</a>
-    </p>
-  </section>
-  <section id="heraldry">
-    <h2>Heraldry</h2>
-    <p>
-      Hopking is an armiger by virtue of a grant from the Court of the Lord Lyon. His full heraldic achievement comprises a shield, crest, and motto, surmounted by a helm befitting his degree. In addition to these primary bearings, the Lord Lyon has granted him a pennon. Beyond the aesthetic pageantry, Hopking is a dedicated student of the historical and legal framework that governs Scottish armory as heritable property.
-    </p>
-    <p class="note">
-      <a href="https://heraldry.markhopking.co.uk/">Heraldry →</a>
-    </p>
-  </section>
-  <section id="genealogy">
-    <h2>Genealogy</h2>
-    <p>
-      Hopking’s genealogical work is a systematic endeavor to reconstruct and preserve the long-term history of the Hopking name and its allied branches. Through rigorous documentation and the resolution of complex historical records, he has traced the family’s roots to the seminal monarchs of the British Isles and Europe, including Kenneth I, Alfred the Great, and Charlemagne. His objective is to create a definitive, evidence-based archive that bridges the gap between ancient royal lineages and the modern family record.
-    </p>
-    <p class="note">
-      <a href="https://genealogy.markhopking.co.uk/">Genealogy →</a>
-    </p>
-  </section>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h2>Mark Richard Hopking</h2>
+        <p class="hero-subtitle">British Mariner & Baron of Balvill</p>
+        <p class="hero-description">
+          A career spanning expedition sailing, polar operations, and senior command within the superyacht sector. 
+          Baron of Balvill and student of heraldry and genealogy, with particular interest in their historical and legal contexts.
+        </p>
+      </div>
+      <div class="hero-image">
+        <img src="Hopking-20250322-001.jpg" alt="Mark Hopking" class="hero-portrait" />
+      </div>
+    </div>
+  </header>
 
-    <section class="refs" id="references" aria-label="References">
-      <h2>References</h2>
-      <ol>
-        <li id="ref-1">Maritime &amp; Coastguard Agency (UK), “Certificate validation” <a href="https://coccec.mcga.gov.uk/Certificate-Search-Results/?documentId=coc0025984&date=1971-04-28" target="_blank" rel="noopener noreferrer">View Certificate Details</a>
-. Retrieved 2025-11-24. <!-- TODO: add URL if publicly linkable --></li>
-        <li>
-  <a href="https://www.abebooks.com/9780952328278/2041-Voyage-South-Swan-Robert-0952328275/plp"
-     target="_blank"
-     rel="noopener noreferrer">
-    Robert Swan, <em>2041: The Voyage South</em> (Garsdale Head, Cumbria: Hayloft Publishing, 2000)
-  </a>
-</li>
-      <li>
-  <a href="https://www.superyachttimes.com/yacht-news/sherpa-all-you-need-to-know-about-feadship-s-first-support-yacht"
-     target="_blank"
-     rel="noopener noreferrer">
-    Superyacht Times (2018-04-30). “Sherpa: all you need to know about Feadship’s new superyacht”.
-  </a>
-  Retrieved 2025-11-23.
-</li>
-<li>
-  <a href="https://debretts.com/directories/other-titles-2/the-feudal-baronies-of-scotland/"
-     target="_blank"
-     rel="noopener noreferrer">
-    Debrett’s Scottish Feudal Barons, entry “Balvill”.
-  </a>
-</li>
-      <li>
-  <a href="https://fellows.socantscot.org/members-directory/fellows-public-list/?mf=0%3DMark%261%3DHopking"
-     target="_blank"
-     rel="noopener noreferrer">
-    Society of Antiquaries of Scotland, Public List of Fellows.
-  </a>
-</li>
-       <li>
-  <a href="https://www.ridgway-adventure.co.uk/"
-     target="_blank"
-     rel="noopener noreferrer">
-    Ridgway Adventure School.
-  </a>
-</li>
-     <li id="ref-7">
-  BFI, “Exposure” (Channel 4 <em>Cutting Edge</em>, 1993).
-  <a href="https://youtu.be/wIGGlzLu9dE"
-     target="_blank"
-     rel="noopener noreferrer">
-    YouTube
-  </a>
-</li>
-  <a href="https://www.youtube.com/watch?v=FqFvJ-O3f9Y"
-     target="_blank"
-     rel="noopener noreferrer">
-    ITV (1993). The Remarkable Story of the First Woman to Round Cape Horn.
-  </a>
-</li>        
-       <li>
-  <a href="https://www.abebooks.co.uk/9780340574805/Amazing-Ridgway-Rebecca-0340574801/plp"
-     target="_blank"
-     rel="noopener noreferrer">
-    Ridgway, Rebecca (1993). <em>Something Amazing</em>. Hodder &amp; Stoughton. ISBN 0340574801.
-  </a>
-</li>
-       <li>
-  <a href="https://oceangloberace.com/the-race/past-entrants"
-     target="_blank"
-     rel="noopener noreferrer">
-    Ocean Globe Race, “Past Entrants – Whitbread Round the World Race (1977–78)”.
-  </a>
-</li>
-      <li>
-  <a href="https://www.youtube.com/watch?v=cPp6pH31mbs"
-     target="_blank"
-     rel="noopener noreferrer">
-    The Ocean Race (2022-08-06). Around the World with Ridgway: A film from the Whitbread Round the World Race 1977–78.
-  </a>
-  Retrieved 2025-11-22 – via YouTube.
-</li>
-  <li>
-  <a href="https://2041foundation.org/about-us/"
-     target="_blank"
-     rel="noopener noreferrer">
-    2041 Foundation, “About Us”.
-  </a>
-</li>
-  <li>
-  <a href="https://media.superyachtnews.com/uploads/library/Crew/Documents/TCR%2076%20Captains%20comments.pdf"
-     target="_blank"
-     rel="noopener noreferrer">
-    The Crew Report, Issue 76 (SuperyachtNews / The Superyacht Group, 2015). “Captains’ comments: Are we over-regulated?”
-  </a>
-</li>
-  <li>
-  <a href="https://www.superyachtnews.com/library/thecrewreport/opensource/pdf/77"
-     target="_blank"
-     rel="noopener noreferrer">
-    The Crew Report, Issue 77 (SuperyachtNews / The Superyacht Group, 2016), p. 19. “The good old days of yachting” – Captains’ Comments section.
-  </a>
-</li>
-  <li>
-  <a href="https://gbeawards.com/previous_winners.asp"
-     target="_blank"
-     rel="noopener noreferrer">
-    Global Business Excellence Awards (GBEAs), “Previous winners” (site listing).
-  </a>
-  Retrieved 2025-12-24.
-</li>
-  <li>
-  <a href="https://www.newspapers.com/newspage/752301771/"
-     target="_blank"
-     rel="noopener noreferrer">
-    Talati, Smita (1998-11-28). “Set fair for an easy berth on the beach”. <em>The Daily Telegraph</em> (London), Cash Clinic, p. B14.
-  </a>
-</li>
-<li>
-  <a href="https://www.superyachtnews.com/fleet/feadship-launches-74m-explorer-sherpa"
-     target="_blank"
-     rel="noopener noreferrer">
-    SuperyachtNews (2018-04-30). “Feadship launches 74m explorer ‘Sherpa’”.
-  </a>
-  Retrieved 2025-11-23.
-</li>
-    <li>
-  <a href="https://www.youtube.com/watch?v=VPmGvjXBomw"
-     target="_blank"
-     rel="noopener noreferrer">
-    “The Making of a Dream” (video).
-  </a>
-  Retrieved 2025-11-23.
-</li>
-        <li id="ref-20">Court of the Lord Lyon. <em>Public Register of All Arms and Bearings in Scotland</em>, Vol. 93 (Edinburgh), p. 90.</li>
-  <li>
-  <a href="https://lordlyonsociety.org.uk/armorial/"
-     target="_blank"
-     rel="noopener noreferrer">
-    Lord Lyon Society, “Armorial”.
-  </a>
-  Retrieved 2025-11-26.
-</li>
-        <li>
-  <a href="https://www.tartanregister.gov.uk/tartanDetails?ref=12619"
-     target="_blank"
-     rel="noopener noreferrer">
-    Scottish Register of Tartans, “Hopking, M &amp; Family (Personal)”, SRT No. 12619.
-  </a>
-</li>
-      </ol>
-      <p class="note">
-        Where URLs are not yet shown, they should be added once stable public links (or archival identifiers) are confirmed.
-      </p>
+  <!-- Main Content -->
+  <main>
+    <!-- Subdomain Cards -->
+    <section>
+      <div class="section-header">
+        <h2>Explore</h2>
+        <p>Four domains of professional and personal pursuit</p>
+      </div>
+
+      <div class="subdomain-grid">
+        <a href="https://marine.markhopking.co.uk/" class="subdomain-card">
+          <span class="card-icon">⚓</span>
+          <h3 class="card-title">Maritime Career</h3>
+          <p class="card-description">
+            Thirty years spanning expedition sailing, environmental operations, and senior superyacht command. 
+            Project leadership in complex maritime programs.
+          </p>
+          <span class="card-cta">View maritime career →</span>
+        </a>
+
+        <a href="https://barony.markhopking.co.uk/" class="subdomain-card">
+          <span class="card-icon">♔</span>
+          <h3 class="card-title">Barony of Balvill</h3>
+          <p class="card-description">
+            A dignity created by Crown charter in 1630, now recognized in Scots law as incorporeal heritable property. 
+            Historical documentation and lineage.
+          </p>
+          <span class="card-cta">View barony history →</span>
+        </a>
+
+        <a href="https://heraldry.markhopking.co.uk/" class="subdomain-card">
+          <span class="card-icon">⚜</span>
+          <h3 class="card-title">Heraldry</h3>
+          <p class="card-description">
+            Armiger by grant from the Court of the Lord Lyon. Full heraldic achievement comprising shield, crest, 
+            motto, and pennon under Scottish armorial law.
+          </p>
+          <span class="card-cta">View heraldry →</span>
+        </a>
+
+        <a href="https://genealogy.markhopking.co.uk/" class="subdomain-card">
+          <span class="card-icon">🌳</span>
+          <h3 class="card-title">Genealogy</h3>
+          <p class="card-description">
+            Systematic reconstruction of family history through rigorous documentation. 
+            Lineage traced to seminal monarchs of the British Isles and Europe.
+          </p>
+          <span class="card-cta">View genealogy →</span>
+        </a>
+      </div>
     </section>
-</main>
-  <footer class="site-footer">
-  <p>
-    © <span id="copyright-year"></span>
-    <a href="https://markhopking.co.uk/">markhopking.co.uk</a>.
-    All rights reserved.
-  </p>
-  <p>
-    Content is presented in a neutral, third-party style with citations distinguishing
-    published sources from privately held records.
-  </p>
-</footer>
 
-<script>
-  document.getElementById("copyright-year").textContent = new Date().getFullYear();
-</script>
+    <!-- Detailed Information Box -->
+    <section class="info-section">
+      <div class="info-grid">
+        <div class="info-media">
+          <img src="Mark-Hopking-Arms.png" alt="Arms of Mark Hopking" class="info-arms" />
+          <p class="info-caption">
+            <a href="https://heraldry.markhopking.co.uk/" target="_blank" rel="noopener noreferrer">
+              Arms of Mark Hopking
+            </a>
+          </p>
+          
+          <img src="Hopking-Tartan.jpg" alt="Hopking tartan" class="info-tartan" />
+          <p class="info-caption">
+            <a href="https://www.tartanregister.gov.uk/tartanDetails?ref=12619" target="_blank" rel="noopener noreferrer">
+              Hopking tartan (registered)
+            </a>
+          </p>
+        </div>
+
+        <dl class="info-details">
+          <dt>Full name</dt>
+          <dd>Mark Richard Hopking</dd>
+          
+          <dt>Born</dt>
+          <dd>28 April 1971<span class="sup-ref"><a href="#ref-1">[1]</a></span></dd>
+          
+          <dt>Place of birth</dt>
+          <dd>Colchester, England</dd>
+          
+          <dt>Nationality</dt>
+          <dd>British</dd>
+          
+          <dt>Residence</dt>
+          <dd>Edinburgh, Scotland</dd>
+          
+          <dt>Dignity</dt>
+          <dd>Baron of Balvill</dd>
+          
+          <dt>Known for</dt>
+          <dd>
+            <ul class="info-list">
+              <li>Superyacht command</li>
+              <li>Build oversight</li>
+              <li>Project leadership<span class="sup-ref"><a href="#ref-3">[3]</a></span></li>
+            </ul>
+          </dd>
+          
+          <dt>Affiliations</dt>
+          <dd>
+            <ul class="info-list">
+              <li>Freeman of the Honourable Company of Master Mariners</li>
+              <li>Fellow of the Society of Antiquaries of Scotland<span class="sup-ref"><a href="#ref-5">[5]</a></span></li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Sections</h3>
+          <ul class="footer-links">
+            <li><a href="https://marine.markhopking.co.uk/">Maritime Career</a></li>
+            <li><a href="https://barony.markhopking.co.uk/">Barony of Balvill</a></li>
+            <li><a href="https://heraldry.markhopking.co.uk/">Heraldry</a></li>
+            <li><a href="https://genealogy.markhopking.co.uk/">Genealogy</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <ul class="footer-links">
+            <li><a href="https://www.linkedin.com/in/markhopking/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://www.facebook.com/markhopking" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://www.instagram.com/markhopking/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://x.com/markhopking" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="https://roll.baronage.com/baron/mark-hopking" target="_blank" rel="noopener noreferrer">Baronage Roll</a></li>
+            <li><a href="https://www.tartanregister.gov.uk/tartanDetails?ref=12619" target="_blank" rel="noopener noreferrer">Tartan Registry</a></li>
+            <li><a href="https://fellows.socantscot.org/" target="_blank" rel="noopener noreferrer">Society of Antiquaries</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© <span id="copyright-year"></span> Mark Hopking. All rights reserved.</p>
+        <p>Content presented in a neutral, third-party style with citations distinguishing published sources from privately held records.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+
+    // Update copyright year
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const nav = document.querySelector('.site-nav');
+      const navLinks = document.getElementById('navLinks');
+      const navToggle = document.querySelector('.nav-toggle');
+      
+      if (!nav.contains(event.target)) {
+        navLinks.classList.remove('active');
+      }
+    });
+
+    // Close mobile menu when link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.getElementById('navLinks').classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
