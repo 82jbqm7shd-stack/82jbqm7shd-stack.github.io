@@ -3,14 +3,42 @@
 
   <url>
     <loc>https://markhopking.co.uk/</loc>
-    <lastmod>2025-03-22</lastmod>
+    <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
+    <loc>https://marine.markhopking.co.uk/</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://barony.markhopking.co.uk/</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://barony.markhopking.co.uk/history</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://heraldry.markhopking.co.uk/</loc>
-    <lastmod>2025-03-22</lastmod>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://genealogy.markhopking.co.uk/</loc>
+    <lastmod>2026-01-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
