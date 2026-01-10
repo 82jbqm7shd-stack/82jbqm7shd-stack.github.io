@@ -1,0 +1,12 @@
+# robots.txt for markhopking.co.uk
+
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Reference to sitemap
+Sitemap: https://markhopking.co.uk/sitemap.xml
+
+# Crawl delay (optional - helps prevent server overload)
+# Set to 1 second between requests
+Crawl-delay: 1
